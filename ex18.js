@@ -3,7 +3,17 @@
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
 function fibonacci(n) {
-  // your code here
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+
+  let prev = 0,
+    next = 1;
+
+  for (let i = 2; i <= n; i++) {
+    [prev, next] = [next, prev + next];
+  }
+
+  return next;
 }
 
 console.log(fibonacci(5)); // Output: 5
